@@ -88,3 +88,33 @@ if (browserSmall){
   const menu = document.querySelector('.menu');
   menu.classList.add('menu-mobile')
 }
+
+// FUNÇÕES IMPORTANTES
+function handleEvent(event){
+  if(event.key === 'a'){
+    document.body.classList.add('azul')  //adiciona classe AZUL ao clicar na tecla A do teclado
+  }
+  if(event.key === 'f'){
+    document.body.classList.remove('azul')
+  }
+  if(event.key === 't'){
+    document.documentElement.classList.toggle('textoMaior') //adiciona ou remove classe que aumenta a letra em todo o site.
+  }
+}
+
+window.addEventListener('keydown', handleEvent)
+
+
+// -------------------------------------------
+const linksInternos = document.querySelectorAll('a[href^="#"]')
+
+function handleClickLinks(event){
+  linksInternos.forEach( link => {
+    link.classList.remove('ativo');  //remove classe de todos os links
+  })
+  event.currentTarget.classList.add('ativo')  //adiciona classe apenas no selecionado.
+}
+
+linksInternos.forEach( links => {
+  links.addEventListener('click', handleClickLinks)
+})
