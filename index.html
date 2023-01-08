@@ -11,6 +11,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+      document.documentElement.className += " js";  //adiciona uma classe js no html 
+    </script>
     <title>Document</title>
   </head>
   <body>
@@ -24,14 +27,14 @@
     </nav>
     <section class="grid-section">
       <h1 class="title">Gatos Fantásticos</h1>
-      <ul class="list-animals">
-        <img src="assets/imagem1.jpg" />
-        <img src="assets/imagem2.jpg" />
-        <img src="assets/imagem3.jpg" />
-        <img src="assets/imagem4.jpg" />
-        <img src="assets/imagem5.jpg" />
+      <ul class="list-animals js-tabmenu">
+        <li><img src="assets/imagem1.jpg" /></li>
+        <li><img src="assets/imagem2.jpg" /></li>
+        <li><img src="assets/imagem3.jpg" /></li>
+        <li><img src="assets/imagem4.jpg" /></li>
+        <li><img src="assets/imagem5.jpg" /></li>
       </ul>
-      <div class="desciption-animal">
+      <div class="desciption-animal js-tabcontent">
         <section>
           <h2>Angorá</h2>
           <p>
@@ -43,13 +46,12 @@
           </p>
           <p>
             Essa raça é uma das mais antigas do mundo, por isso é considerada um
-            verdadeiro tesouro. 
+            verdadeiro tesouro.
           </p>
           <p>
-            Apesar de ser dócil, tem a
-            personalidade forte, e, geralmente, escolherá a pessoa que será seu
-            tutor em seu lar. Uma vez escolhida, ele ficará totalmente apegado a
-            ela, necessitando de muita atenção.
+            Apesar de ser dócil, tem a personalidade forte, e, geralmente,
+            escolherá a pessoa que será seu tutor em seu lar. Uma vez escolhida,
+            ele ficará totalmente apegado a ela, necessitando de muita atenção.
           </p>
         </section>
         <section>
@@ -118,7 +120,7 @@
     </section>
     <section class="grid-section faq" id="faq">
       <h1 class="title">FAQ</h1>
-      <dl class="faq-list">
+      <dl class="faq-list js-accordion">
         <dt>Qual a idade dos animais?</dt>
         <dd>
           As raposas são animais mamíferos e onívoros pertencentes à família
@@ -155,5 +157,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="script-aulas.js"></script>
   </body>
 </html>
