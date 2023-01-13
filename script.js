@@ -63,3 +63,44 @@ function initAccordion(){
   })
 }
 initAccordion();
+
+// -------------- SCROLL SUAVE
+function Scroll(){
+  const links = document.querySelectorAll('.js-menu a[href^="#"]');
+  
+  if(links.length > 0){
+    function scrollSection(event){                                                                                          
+      event.preventDefault();
+      const href = event.currentTarget.getAttribute('href')
+      const section = document.querySelector(href)
+      
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', scrollSection)
+    })
+  }
+}
+Scroll();
+
+// ------------ Entrada de elementos suave com Scroll
+
+const sections = document.querySelectorAll('.js-scroll')
+const windowHeightHalf = window.innerHeight * 0.5;   //50% do tamanho da tela
+
+function animaScroll(){
+  sections.forEach( section => {
+    const sectionTop = section.getBoundingClientRect().top;  //distancia do elemento para o Topo
+    const isSectionVisible = sectionTop - windowHeightHalf // ativará o efeito na tela apenas quando a section bater no meio da tela
+    if( isSectionVisible < 0) { 
+      section.classList.add('active')
+    }
+  })
+}
+animaScroll();
+
+window.addEventListener('scroll', animaScroll)
